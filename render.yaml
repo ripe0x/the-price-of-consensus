@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: price-of-consensus
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node --loader ts-node/esm src/server.ts
+    envVars:
+      - key: NODE_ENV
+        value: production
