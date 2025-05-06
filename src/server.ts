@@ -3,7 +3,7 @@ import { getFloorPriceForEdition } from "./floorPrice.js";
 import { getPriceSvg, getPricelessSvg } from "./svg.js";
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const validEditionSizes = [1, 4, 5, 10, 20, 40];
 const title = "the price of consensus";
 
@@ -89,5 +89,5 @@ app.get("/full-set", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server ready on port ${PORT}`);
 });
